@@ -1,0 +1,263 @@
+---
+
+import { getCollection, render } from 'astro:content';
+import { getLangFromUrl } from '@i18n/langFunctions';
+import { sortSmallFirst } from '@/snippets/numberGames';
+import { defineConfig } from 'astro/config';
+import { translatePath } from '@i18n/langFunctions';
+import { Image } from 'astro/components/Image.astro';
+
+import languageIcon from "@assets/for_site/planetli.svg?raw";
+import LogoTop from '../logo/LogoTop.astro';
+
+const translationPaths = await translatePath(Astro.url);
+
+const lang = getLangFromUrl(Astro.url);
+
+const sectionsAllLang = await getCollection('sections');
+const lB = await getCollection('lilBits');
+
+const tNav = lB.filter(entry => {
+	return entry.id == "nav";
+})[0].data;
+
+
+const { slug, page, pages } = Astro.props;
+
+const sectionsThisLang = sectionsAllLang.filter(section => {
+	const sectionFilePath = section.filePath.split('/');
+	const sectionLang = sectionFilePath[sectionFilePath.length - 2];
+	return sectionLang == lang;
+});
+
+const sectionsInclude = sectionsThisLang.filter(section => section.data.menu_include == true);
+const sectionsOrdered = sortSmallFirst(sectionsInclude, "menu_order");
+var frag4Large = "<span><a href='/"+lang+"/'>"+tNav.ind[lang]+"</a></span>";
+
+for (let i = 0; i < sectionsOrdered.length; i++) {
+	frag4Large += "<span>";
+	frag4Large += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;"
+	frag4Large += "</span>";
+	frag4Large += "<span>";
+	frag4Large += "<a href=\"/"+lang+"/"+sectionsOrdered[i].data.slug+"\">";
+	frag4Large += sectionsOrdered[i].data.title;
+	frag4Large += "</a>";
+	frag4Large += "</span>";
+}
+
+var lang4Large = "";
+for(let i = 0; i < translationPaths.length; i++){
+	if(i != 0){
+		lang4Large += "<span>";
+		lang4Large += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;"
+		lang4Large += "</span>";
+	}
+	lang4Large += "<span>";
+	lang4Large += "<a href=\"/"+translationPaths[i].path+"\">";
+	lang4Large += translationPaths[i].locale;
+	lang4Large += "</a>";
+	lang4Large += "</span>";
+}
+
+
+
+var frag4Small = "<div class='w-fit'>";
+frag4Small += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;";
+frag4Small += "<span><a href='/"+lang+"/'>"+tNav.ind[lang]+"</a></span>";
+frag4Small += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;";
+frag4Small += "</div>";
+
+for (let i = 0; i < sectionsOrdered.length; i++) {
+	frag4Small += "<div class'w-fit'>";
+	frag4Small += "<span>";
+	frag4Small += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;";
+	frag4Small += "</span>";
+	frag4Small += "<span>";
+	frag4Small += "<a href=\"/"+lang+"/"+sectionsOrdered[i].data.slug+"\">";
+	frag4Small += sectionsOrdered[i].data.title;
+	frag4Small += "</a>";
+	frag4Small += "</span>";
+	frag4Small += "<span>";
+	frag4Small += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;";
+	frag4Small += "</span>";
+	frag4Small += "</div>";
+}
+//frag4Small += "<div class='h-0.1'></div>";
+
+
+var lang4Small = "";
+for(let i = 0; i < translationPaths.length; i++){
+	lang4Small += "<div class'w-fit'>";
+	//if(i != 0){
+		lang4Small += "<span>";
+		lang4Small += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;"
+		lang4Small += "</span>";
+	//}
+	lang4Small += "<span>";
+	lang4Small += "<a href=\"/"+translationPaths[i].path+"\">";
+	lang4Small += translationPaths[i].locale;
+	lang4Small += "</a>";
+	lang4Small += "</span>";
+	lang4Small += "<span>";
+	lang4Small += "&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;"
+	lang4Small += "</span>";
+	lang4Small += "</div>";
+}
+//lang4Small += "<div class='h-0.1'></div>";
+
+---
+
+<div class="hidden h-fit"></div>
+
+<div class="w-full hidden md:flex flex-row justify-between">
+	<div class="max-h-24 h-auto">
+		<LogoTop />
+	</div>
+	<div class="flex-grow-1"></div>
+	<div class="mx-0 w-fit flex flex-row">
+		<span class="flex flex-row items-center  flex-grow-1">
+			<Fragment set:html={frag4Large} />
+		</span>
+		<span class="flex flex-row items-center">
+			<!-- &nbsp;&nbsp;&nbsp;• -->
+			<span class="wantLang cursor-pointer flex flex-row  transition-all max-w-36 overflow-hidden">
+				&nbsp;&nbsp;&nbsp;
+				<a class="border-b-[1px] border-transparent hover:border-secondary">
+					<!-- <Fragment set:html={languageIcon} /> -->
+				</a>
+			</span>
+			<span class="chooseLang max-w-0 flex flex-row overflow-hidden  transition-all" style="fill: blue;">
+				&nbsp;&nbsp;&nbsp;
+				<Fragment set:html={lang4Large}/>
+			</span>
+		</span>
+	</div>
+
+	
+</div>
+
+<div class="w-full flex flex-col md:hidden justify-between">
+	<div class="w-full flex flex-col">
+		<div class="max-h-24 h-auto">
+			<LogoTop />
+		</div>
+		<div class="h-0.2"></div>
+		<div
+			class="h-0.5 bg-secondary w-full"
+			data-aos="fade-up"
+			data-aos-duration="2000">
+		</div>
+		<div class="flex-grow-1"></div>
+		<div class="mx-auto my-1.5 w-fit flex flex-row items-center ">
+			<span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
+			<a class="cursor-pointer flex-grow-1" id="mobileMenuButton">
+				{tNav.menu[lang]}
+			</a>
+			<!--<span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
+			<a class="cursor-pointer border-b-[1px] border-transparent hover:border-secondary" id="mobileLangButton">
+				<Fragment set:html={languageIcon} />
+			</a>-->
+			<span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
+		</div>
+	</div>
+	<div
+		class="h-1.5 bg-secondary w-full"
+		data-aos="fade-up"
+		data-aos-duration="2000">
+	</div>
+	<div class="w-full flex flex-col">
+		<div id="mobileMenuContent" class="mx-auto items-center transition-all w-fit flex flex-col overflow-hidden h-0 items-center space-y-4 my-0">
+			<Fragment set:html={frag4Small} />
+		</div>
+	</div>
+	<div class="w-full flex flex-col">
+		<div id="mobileLangContent" class="mx-auto transition-all w-fit flex flex-col overflow-hidden h-0 items-center space-y-4 my-0">
+			<Fragment set:html={lang4Small} />
+		</div>
+	</div>
+	<div
+		class="h-1.5 bg-secondary w-full -mt-1.5"
+		data-aos="fade-up"
+		data-aos-duration="2000">
+	</div>
+</div>
+
+<script>
+import type { swapBodyElement } from "astro/virtual-modules/transitions-swap-functions.js";
+
+	const mMB = document.getElementById("mobileMenuButton");
+	const mMC = document.getElementById("mobileMenuContent");
+
+	const mLB = document.getElementById("mobileLangButton");
+	const mLC = document.getElementById("mobileLangContent");
+
+	const wLD = document.querySelector(".wantLang");
+	const aLD = document.querySelector(".chooseLang");
+
+	//desktop languages
+	wLD.addEventListener("click", function(){
+		aLD.classList.remove("max-w-0");
+		wLD.classList.remove("max-w-36");
+		aLD.classList.add("max-w-36")
+		wLD.classList.add("max-w-0")
+	});
+	
+	//mobile menu
+	const body = document.querySelector("body");
+	var menuState = "closed";
+	mMB.addEventListener("click", function(){
+		if(menuState == "closed"){
+			if(langState == "open"){
+				closeLang();
+				langState = "closed";
+			}
+			openMenu();
+			menuState = "open";
+		} else {
+			closeMenu();
+			menuState = "closed";
+		}
+	});
+	
+
+	function closeMenu(){
+		mMC.classList.add("h-0");
+		mMC.classList.remove("h-fit");
+		mMC.classList.add("my-0");
+		mMC.classList.remove("my-4");
+	}
+	function openMenu(){
+		mMC.classList.remove("h-0");
+		mMC.classList.add("h-fit");
+		mMC.classList.remove("my-0");
+		mMC.classList.add("my-4");
+	}
+	var langState = "closed";
+	mLB.addEventListener("click", function(){
+		if(langState == "closed"){
+			if(menuState == "open"){
+				closeMenu();
+				menuState = "closed";
+			}
+			openLang();
+			langState = "open";
+		} else {
+			closeLang();
+			langState = "closed";
+		}
+	});
+	
+
+	function closeLang(){
+		mLC.classList.add("h-0");
+		mLC.classList.remove("h-fit");
+		mLC.classList.add("my-0");
+		mLC.classList.remove("my-4");
+	}
+	function openLang(){
+		mLC.classList.remove("h-0");
+		mLC.classList.add("h-fit");
+		mLC.classList.remove("my-0");
+		mLC.classList.add("my-4");
+	}
+</script>

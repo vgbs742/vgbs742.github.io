@@ -1,0 +1,24 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+
+const { title, keywords, author, excerpt, datePub, dateUp } = Astro.props;
+
+var allKeywords = keywords;
+---
+
+<html lang="en" class="selection:bg-complementary-split-pink selection:text-secondary text-secondary">
+  <head>
+    <BaseHead title={title} keywords={allKeywords} author={author} excerpt={excerpt} datePub={datePub} dateUp={dateUp} />
+  </head>
+
+  <body class="bg-primary">
+    <slot />
+    <script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
+    <script type="text/javascript">
+      AOS.init({once: true, offset: 0});
+    </script>
+    
+  </body>
+</html>

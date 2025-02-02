@@ -1,0 +1,57 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/landing/Hero.astro";
+import Projects from "@components/landing/Projects.astro";
+import Testimonials from "@components/landing/Testimonials.astro";
+import Articles from "@components/landing/Articles.astro";
+import FeaturedWork from "@components/landing/FeaturedWork.astro";
+import TopArea from "@components/general/TopArea.astro";
+import FrontSection from "@components/technical/FrontSection.astro";
+import ThinLine from "@/components/snippets/ThinLine.astro";
+import ThickLine from "@/components/snippets/ThickLine.astro";
+
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+import { getCollection, getEntry, render } from 'astro:content';
+
+export function getStaticPaths () {
+ return [
+    {params:{lang: 'en'}},
+    {params:{lang: 'de'}},
+    {params:{lang: 'fr'}},
+  ];
+}
+
+const entry = lang+'/introtext01';
+const introContent = await getEntry('bigBits', entry);
+/*const introContentColl = await getCollection('bigBits');
+
+const introContent = introContentColl.filter(item => {
+    const returnThis = item.id == entry;
+    //console.log("entry: '"+entry+"'     item.id: '"+item.id+"'     returnThis: "+returnThis);
+    return returnThis;
+  }
+);*/
+
+/*//console.log("introContentColl");
+//console.log(introContentColl);*/
+//console.log("introContent");
+//console.log(introContent);
+
+const { Content: Intro } = await render(introContent);
+
+---
+
+<BaseLayout>
+  <TopArea />
+  <Intro />
+  <div class="h-24"></div>
+  <FrontSection collection="news" sortBy="date_published" howMany="4" component="ArticlesNude" showDate="true" sectionTitle="true">
+  </FrontSection>
+  <div class="h-24"></div>
+    <!--fljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfs
+  <ThinLine />-->
+  </FrontSection>
+
+</BaseLayout>

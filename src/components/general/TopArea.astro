@@ -1,0 +1,42 @@
+---
+import LogoTop from '@components/logo/LogoTop.astro';
+import Menu from '@components/navigation/Menu.astro';
+
+const { lang } = Astro.props;
+---
+
+<!------
+  /------------------
+// Big SVG hero Name
+//-------------------
+//
+// If you want to change your name you will have to recreate it
+// in Figma or any other way you can export text as SVG
+// After you have exported it, you have to remove the size atributes from the SVG
+// this will allow the SVG become fill width and full heigh. It will also be responsive.
+--- -->
+<section class="">
+  <div class="">
+    <!-- <LogoTop /> -->
+  </div>
+  <div class="px-8 2xl:max-w-7xl mx-0 pb-12">
+    <div class="space-y-0">
+      <div
+        class="h-0 bg-secondary"
+        data-aos="fade-up"
+        data-aos-duration="1000">
+      </div>
+      <div
+        class="flex flex-col sm:flex-row gap-3 justify-between items-center"
+        data-aos="fade-up"
+        data-aos-duration="1500">
+        <Menu lang={lang}/>
+      </div>
+      <div
+        class="h-1.5 bg-secondary hidden w-full md:flex"
+        data-aos="fade-up"
+        data-aos-duration="2000">
+      </div>
+    </div>
+  </div>
+</section>

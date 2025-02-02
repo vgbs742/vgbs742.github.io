@@ -1,0 +1,50 @@
+---
+const { thin, thick, linkUrl, linkText, pageLinks, putAnchor, bothThin, hideFirst, tagLine } = Astro.props;
+
+////console.log("SECTIONTITLE");
+////console.log("bothThin: "+bothThin);
+if(bothThin){
+	////console.log("bothThin true");
+}else{
+	////console.log("bothThin false");
+}
+---
+{ (thin || thick || linkText || pageLinks ) && 
+<spanm id={putAnchor}></span>
+<div class="mt-6">
+	
+	<div class="w-full flex flex-row space-between align-center justify-center h-headingHeight">
+		<div class="grid grid-cols-1 grid-rows-1 w-full">
+			<h3
+			class="text-secondary pb-headingPadding w-full text-4xl col-start-1 row-start-1 z-0 ml-0 font-title tracking-widest flex flex-row justify-center self-end"
+			data-aos="fade-up"
+			data-aos-duration="1500"
+			>
+				<span class="self-end">{thin}</span><span class="self-end">&nbsp;</span>
+				<span class="self-end">{thick}</span>
+			</h3>
+			<h3
+			class="text-primary pb-headingPadding bg-secondary w-full text-4xl col-start-1 row-start-1 z-10 ml-0 font-title tracking-widest overflow-hidden max-h-headingLineA flex flex-row justify-center self-end"
+			data-aos="fade-up"
+			data-aos-duration="1500"
+			>
+				<span class="self-end">{thin}</span><span class="self-end">&nbsp;</span>
+				<span class="self-end">{thick}</span>
+			</h3>
+		</div>
+		
+		{tagLine && <span class="hidden md:flex flex-grow">&nbsp;-&nbsp;{tagLine}</span>}
+		<!--{linkUrl && <span class="grow text-right"><a class="font-bold text-secondary text-right" href={linkUrl}>
+			{linkText} &nbsp; ↗
+		</a></span>}-->
+		{pageLinks && <div class="text-secondary">
+			<Fragment set:html={pageLinks} />
+		</div>}
+	</div>
+	{tagLine && <span class="italic md:hidden">&nbsp;-&nbsp;{tagLine}</span>}
+	<!-- <div 
+		class="h-0.5 bg-secondary -mt-2"
+		>
+	</div>-->
+</div>
+}
