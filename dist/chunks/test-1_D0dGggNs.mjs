@@ -1,8 +1,0 @@
-async function getMod() {
-						return import('./test-1_DNOYz_Kb.mjs').then(n => n._);
-					}
-					const collectedLinks = [];
-					const collectedStyles = [".medium-zoom-overlay[data-astro-cid-jbob4fnn]{z-index:5;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);position:fixed;inset:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--opened[data-astro-cid-jbob4fnn] .medium-zoom-overlay[data-astro-cid-jbob4fnn]{z-index:99;cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image[data-astro-cid-jbob4fnn]{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden[data-astro-cid-jbob4fnn]{visibility:hidden}.medium-zoom-image--opened[data-astro-cid-jbob4fnn]{z-index:101;position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}@media screen and (min-width: 768px){.caption[data-astro-cid-jbob4fnn]{display:relative}.captionMobile[data-astro-cid-jbob4fnn]{display:none}}@media screen and (max-width: 768px){.caption[data-astro-cid-jbob4fnn]{display:none}.captionMobile[data-astro-cid-jbob4fnn]{display:relative}}\n","[data-astro-image]{width:100%;height:auto;-o-object-fit:var(--fit);object-fit:var(--fit);-o-object-position:var(--pos);object-position:var(--pos);aspect-ratio:var(--w) / var(--h)}[data-astro-image=responsive]{max-width:calc(var(--w) * 1px);max-height:calc(var(--h) * 1px)}[data-astro-image=fixed]{width:calc(var(--w) * 1px);height:calc(var(--h) * 1px)}\n"];
-					const defaultMod = { __astroPropagation: true, getMod, collectedLinks, collectedStyles, collectedScripts: [] };
-
-export { defaultMod as default };

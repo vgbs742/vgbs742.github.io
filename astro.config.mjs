@@ -23,5 +23,4 @@ export default defineConfig({
     redirects: true,
   },
   site: 'https://vgbs742.github.io/',
-  base: 'vgbs742.github.io',
 });
