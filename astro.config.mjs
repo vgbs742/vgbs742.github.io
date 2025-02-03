@@ -22,5 +22,5 @@ export default defineConfig({
     //format: 'preserve'
     redirects: true,
   },
-  site: 'https://vgbs742.github.io',
+  site: 'https://vgbs742.github.io/',
 });
