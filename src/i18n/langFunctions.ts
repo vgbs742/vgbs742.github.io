@@ -65,10 +65,22 @@ export async function translatePath(url: object){
   const pathSplitRaw = url.pathname.split('/');
   const pathSplit = pathSplitRaw.filter(path => path !== "");
 
+  const lang = getLangFromUrl(url);
 
-  const locale = pathSplit[0];
-  const sectionRaw = pathSplit[1];
-  const contentRaw = pathSplit[2];
+  var locale;
+  var sectionRaw;
+  var contentRaw;
+
+  if(lang != pathSplit[0]){
+    sectionRaw = pathSplit[0];
+    contentRaw = pathSplit[1];
+  }else{
+    locale = pathSplit[0];
+    sectionRaw = pathSplit[1];
+    contentRaw = pathSplit[2];
+  }
+
+  
 
   ////console.log("pathSplit");
   ////console.log(pathSplit);
