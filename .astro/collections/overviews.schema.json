@@ -28,6 +28,9 @@
         "is_upToDate": {
           "type": "boolean"
         },
+        "make_page": {
+          "type": "boolean"
+        },
         "date_published": {
           "anyOf": [
             {

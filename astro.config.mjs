@@ -13,14 +13,14 @@ export default defineConfig({
     defaultLocale: "de",
     locales: ["de"],
     routing: {
-        prefixDefaultLocale: true,
+        prefixDefaultLocale: false,
     },
   },
   compressHTML: true,
   build: {
     // Example: Generate `page.html` instead of `page/index.html` during build.
     //format: 'preserve'
-    redirects: true,
+    //redirects: true,
   },
   site: 'https://vgbs742.github.io/',
 });

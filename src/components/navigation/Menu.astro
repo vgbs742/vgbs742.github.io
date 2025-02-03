@@ -111,12 +111,12 @@ for(let i = 0; i < translationPaths.length; i++){
 
 <div class="w-full hidden md:flex flex-row justify-between">
 	<div class="max-h-24 h-auto">
-		<LogoTop />
+		<a href={"/"+lang+"/"}><LogoTop /></a>
 	</div>
 	<div class="flex-grow-1"></div>
 	<div class="mx-0 w-fit flex flex-row">
 		<span class="flex flex-row items-center  flex-grow-1">
-			<Fragment set:html={frag4Large} />
+			<!-- <Fragment set:html={frag4Large} />-->
 		</span>
 		<span class="flex flex-row items-center">
 			<!-- &nbsp;&nbsp;&nbsp;• -->
@@ -139,25 +139,25 @@ for(let i = 0; i < translationPaths.length; i++){
 <div class="w-full flex flex-col md:hidden justify-between">
 	<div class="w-full flex flex-col">
 		<div class="max-h-24 h-auto">
-			<LogoTop />
+			<a href={"/"+lang+"/"}><LogoTop /></a>
 		</div>
 		<div class="h-0.2"></div>
-		<div
+		<!-- <div
 			class="h-0.5 bg-secondary w-full"
 			data-aos="fade-up"
 			data-aos-duration="2000">
-		</div>
+		</div>-->
 		<div class="flex-grow-1"></div>
-		<div class="mx-auto my-1.5 w-fit flex flex-row items-center ">
-			<span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
+		<div class="mx-auto my-0 w-fit flex flex-row items-center "> <!-- my was 1.5 -->
+			<!-- <span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
 			<a class="cursor-pointer flex-grow-1" id="mobileMenuButton">
 				{tNav.menu[lang]}
-			</a>
+			</a>-->
 			<!--<span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
 			<a class="cursor-pointer border-b-[1px] border-transparent hover:border-secondary" id="mobileLangButton">
 				<Fragment set:html={languageIcon} />
 			</a>-->
-			<span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
+			<!-- <span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>-->
 		</div>
 	</div>
 	<div

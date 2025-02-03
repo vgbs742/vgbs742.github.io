@@ -9,6 +9,7 @@ import TopArea from "@components/general/TopArea.astro";
 import FrontSection from "@components/technical/FrontSection.astro";
 import ThinLine from "@/components/snippets/ThinLine.astro";
 import ThickLine from "@/components/snippets/ThickLine.astro";
+import WelcomeBanner from "@/components/banners/WelcomeBanner.astro";
 
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
@@ -43,7 +44,7 @@ const { Content: Intro } = await render(introContent);
 
 <BaseLayout>
   <TopArea />
-  <Intro />
+  <WelcomeBanner />
   <div class="h-24"></div>
   <FrontSection collection="news" sortBy="date_published" howMany="4" component="ArticlesNude" showDate="true" sectionTitle="true">
   </FrontSection>

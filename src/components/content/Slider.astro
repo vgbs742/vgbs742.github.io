@@ -60,10 +60,10 @@ for(let i = 0; i < items.length; i++ ){
 <div class="hidden scale-y-0"></div>
 
 
-<div class={"flex flex-col custom-slider relative w-full overflow-hidden shadow-lg my-3 bg-secondary aspect-"+aspect} id={sliderId}>
+<div class={"flex flex-col custom-slider relative w-full overflow-hidden shadow-lg my-3  bg-secondary aspect-"+aspect} id={sliderId}>
   {items.map((thisImage, index) => (
     <div
-      class="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out invisible"
+      class="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-200 ease-in-out invisible"
       data-slider-container
     >
 
@@ -87,12 +87,12 @@ for(let i = 0; i < items.length; i++ ){
   
   
   <!-- Navigation buttons -->
-  <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-75 hover:bg-opacity-100 all-neutral-dark rounded-full p-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-focus" data-slider-prev>
+  <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-75 hover:bg-opacity-100 all-neutral-dark rounded-full p-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary" data-slider-prev>
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
     </svg>
   </button>
-  <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-75 hover:bg-opacity-100 all-neutral-dark rounded-full p-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-focus" data-slider-next>
+  <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-75 hover:bg-opacity-100 all-neutral-dark rounded-full p-3 shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary" data-slider-next>
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
     </svg>
@@ -103,14 +103,14 @@ for(let i = 0; i < items.length; i++ ){
     <!-- Slide indicators -->
     <div class="mx-auto my-2 flex space-x-3 z-10 w-full justify-center">
       {items.map((_, index) => (
-        <button class="w-3 h-3 rounded-full bg-primary bg-opacity-50 hover:bg-opacity-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-focus" style="z-index: 0;" data-slider-indicator data-index={index}></button>
+        <button class="w-3 h-3 rounded-full bg-primary bg-opacity-50 hover:bg-opacity-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary" style="z-index: 0;" data-slider-indicator data-index={index}></button>
       ))}
     </div>
     <!-- caption -->
     <div class="caption grid text-sm w-full z-10 h-fit transition-all duration-50 ease-in-out p-3" caption-outer-container>
-      <div class="grid grid-cols-1 grid-rows-1 bg-complementary-opposite-yellow transition-all duration-500 ease-in-out h-fit py-2" caption-inner-container>
+      <div class="grid grid-cols-1 grid-rows-1 bg-secondary transition-all duration-500 ease-in-out h-fit py-2" caption-inner-container>
         {items.map((thisImage, index) => (
-          <div class="invisible overflow-hidden transition-all ease-in-out duration-300 delay-0 opacity-0 mx-0 mb-0 order-1 px-4 h-0 max-h-8 [grid-area: 1/1/1/1] text-neutral-dark" data-index={index}>{thisImage.capAlt.caption || thisImage.data.generic_caption[lang] || " " }<span class="ref float-right"><a href={thisImage.data.source_url}>{"   by " + thisImage.data.author + ", " + thisImage.data.source_name}</a></span></div>
+          <div class="invisible overflow-hidden transition-all ease-in-out duration-300 delay-0 opacity-0 mx-0 mb-0 order-1 px-4 h-0 max-h-8 [grid-area: 1/1/1/1]  text-primary " data-index={index}>{thisImage.capAlt.caption || thisImage.data.generic_caption[lang] || " " }<span class="ref float-right"><a href={thisImage.data.source_url}>{"   by " + thisImage.data.author + ", " + thisImage.data.source_name}</a></span></div>
         ))}
       </div>
     </div>
@@ -118,9 +118,9 @@ for(let i = 0; i < items.length; i++ ){
 </div>
 
 <div class="captionMobile text-sm grid w-full z-10 h-fit transition-all duration-50 ease-in-out pb-3 -my-3" caption-outer-container-mobile>
-  <div class="grid grid-cols-1 grid-rows-1 bg-complementary-opposite-yellow transition-all duration-500 ease-in-out h-fit shadow-lg z-50" caption-inner-container-mobile>
+  <div class="grid grid-cols-1 grid-rows-1 bg-secondarytransition-all duration-500 ease-in-out h-fit shadow-lg z-50" caption-inner-container-mobile>
     {items.map((thisImage, index) => (
-      <div class="invisible overflow-hidden transition-all ease-in-out duration-300 delay-0 opacity-0 mx-0 mb-0 order-1 px-4 h-0 max-h-8 [grid-area: 1/1/1/1] text-neutral-dark" data-index={index}>{thisImage.capAlt.caption || thisImage.data.generic_caption[lang] || " " }<span class="ref float-right"><a href={thisImage.data.source_url}>{"    by " + thisImage.data.author + ", " + thisImage.data.source_name}</a></span></div>
+      <div class="invisible overflow-hidden transition-all ease-in-out duration-300 delay-0 opacity-0 mx-0 mb-0 order-1 px-4 h-0 max-h-8 [grid-area: 1/1/1/1]  text-primary " data-index={index}>{thisImage.capAlt.caption || thisImage.data.generic_caption[lang] || " " }<span class="ref float-right"><a href={thisImage.data.source_url}>{"    by " + thisImage.data.author + ", " + thisImage.data.source_name}</a></span></div>
     ))}
   </div>
 </div>

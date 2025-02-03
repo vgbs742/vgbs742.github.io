@@ -51,6 +51,7 @@ export default {
 				'headingLineA': '0.48rem',
 				'headingHeight': '2.4rem',
 				'headingPadding': '1.3px',
+				'welcomBannerHeight': '60vh',
 			}
 		},
 	},
@@ -59,9 +60,9 @@ export default {
 			addBase({
 			  'a': { background: theme('gradients.linksNorm') },
 			  'a:hover': { transition: 'all ease-in-out, 0.5s', background: theme('gradients.linksHov'), textDecoration: 'underline', dropShadow: theme('dropShadow.xl') /*config('theme.colors.complementary.opposite.yellow')*/ },
-			  'h1': { fontSize: '2rem' },
-			  'h2': { fontSize: '1.75rem' },
-			  'h3': { fontSize: '1.5rem' },
+			  'h1': { fontSize: '2rem', fontFamily: theme('fontFamily.title') },
+			  'h2': { fontSize: '1.75rem', fontFamily: theme('fontFamily.title')  },
+			  'h3': { fontSize: '1.5rem', fontFamily: theme('fontFamily.title')  },
 			})
 		  })
 	],

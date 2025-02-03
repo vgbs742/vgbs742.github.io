@@ -9,8 +9,8 @@ johann-keller:
   since: ""                               # year of joining
 
 beispiel:
-  name_first: "may"
-  name_last: "myster"
+  name_first: "Beispiel"
+  name_last: "Autor"
   title: ""
   role:
     generic: "founder"                    # generic title, is automatically translated
