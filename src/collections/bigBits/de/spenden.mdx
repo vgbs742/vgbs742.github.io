@@ -15,25 +15,27 @@ import ezs from "@assets/for_content/QR-EZS/VGBS_Einzahlungsschein.pdf";
 
 
 <SectionTitle thin="Spenden" />
-<div class="text-justify max-w-singleCol mx-auto">
-	<div class="h-6"></div>
-	<p>
-		Stellplatz, Überfuhr und Asbestuntersuchung werden zeitnah mehrere tausend Franken an Kosten verursachen. Um dies stemmen zu können sind wir um jede Spende dankbar!
-	</p>
+<div data-aos="fade-up" data-aos-duration="2000">
+	<div class="text-justify max-w-singleCol mx-auto">
+		<div class="h-6"></div>
+		<p>
+			Stellplatz, Überfuhr und Asbestuntersuchung werden zeitnah mehrere tausend Franken an Kosten verursachen. Um dies stemmen zu können sind wir um jede Spende dankbar!
+		</p>
+		<br />
+	</div>
+	<div class="hidden md:flex mx-auto my-6 w-fit max-w-full border-black border">
+		<Fragment set:html={QR} class="" />
+	</div>
+	<div class="hidden sm:flex md:hidden mx-auto my-6 w-fit border-black border">
+		<Fragment set:html={QRM} />
+	</div>
+	<div class="flex sm:hidden mx-auto my-6  w-fit">
+		<Fragment set:html={QRO} />
+	</div>
 	<br />
-</div>
-<div class="hidden md:flex mx-auto my-6 w-fit max-w-full border-black border">
-	<Fragment set:html={QR} class="" />
-</div>
-<div class="hidden sm:flex md:hidden mx-auto my-6 w-fit border-black border">
-	<Fragment set:html={QRM} />
-</div>
-<div class="flex sm:hidden mx-auto my-6  w-fit">
-	<Fragment set:html={QRO} />
-</div>
-<br />
-<div class="text-justify max-w-singleCol mx-auto">
-	<p>
-		<span><a href={ezs}>Einzahlungsschein als PDF herunterladen &nbsp;↗</a></span>
-	</p>
+	<div class="text-justify max-w-singleCol mx-auto">
+		<p>
+			<span><a href={ezs}>Einzahlungsschein als PDF herunterladen &nbsp;↗</a></span>
+		</p>
+	</div>
 </div>
