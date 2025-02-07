@@ -10,7 +10,10 @@ export async function getStaticPaths() {
   ////////////////////console.log(pages);
 
   const pagesThisLang = getOneLang(pages, 'de');
-  const pagesToMake =  pagesThisLang.filter(page => {
+  const pagesNoDrafts =  pagesThisLang.filter(page => {
+    return page.data.is_draft == false;
+  });
+  const pagesToMake =  pagesNoDrafts.filter(page => {
     return page.data.make_page != false;
   });
   const paths = pagesToMake.map(page => {

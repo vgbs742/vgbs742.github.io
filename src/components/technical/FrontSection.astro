@@ -39,7 +39,11 @@ const itemsUnorderly = getOneLang(itemsAllLang, lang);
 
 const itemsSorted = sortBigFirst(itemsUnorderly, sortBy);
 
-const items = itemsSorted.slice(0,howMany);
+const itemsNoDraft =  itemsSorted.filter(item => {
+	return item.data.is_draft == false;
+});
+
+const items = itemsNoDraft.slice(0,howMany);
 
 ////////////////////console.log("newsAI");
 ////////////////////console.log(items);
