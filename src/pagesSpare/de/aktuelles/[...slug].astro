@@ -1,10 +1,10 @@
 ---
-import Page from '@components/pages_complete/news/slug.astro'
+import Page from '@components/pages_complete/now/slug.astro'
 import { getCollection, render } from 'astro:content';
 import { getTranslations, getOneLang } from '@snippets/handleCollections';
 
 export async function getStaticPaths() {
-  const pages = await getCollection('news');
+  const pages = await getCollection('now');
 
   ////////////////////console.log("pages");
   ////////////////////console.log(pages);

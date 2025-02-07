@@ -74,8 +74,8 @@ const overviews = defineCollection({
 });
 
 // News articles
-const news = defineCollection({
-	loader: glob({ pattern: "**/*.{md,mdx}", base: 'src/collections/news' }),
+const now = defineCollection({
+	loader: glob({ pattern: "**/*.{md,mdx}", base: 'src/collections/now' }),
 	schema: z.object({
 		id: z.string(),
 		is_draft: z.boolean(),
@@ -162,4 +162,4 @@ const keyWords = defineCollection({
 // quelle
 
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = { test, people, sources, sections, lilBits, overviews, news, bigBits, keyWords };
+export const collections = { test, people, sources, sections, lilBits, overviews, now, bigBits, keyWords };

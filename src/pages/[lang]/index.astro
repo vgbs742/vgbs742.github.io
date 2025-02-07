@@ -22,8 +22,12 @@ export function getStaticPaths () {
   ];
 }
 
-const entry = lang+'/introtext01';
-const introContent = await getEntry('bigBits', entry);
+const entryIntro = lang+'/introtext01';
+const introContent = await getEntry('bigBits', entryIntro);
+const entryVerein = lang+'/verein';
+const vereinContent = await getEntry('bigBits', entryVerein);
+const entrySpenden = lang+'/spenden';
+const spendenContent = await getEntry('bigBits', entrySpenden);
 /*const introContentColl = await getCollection('bigBits');
 
 const introContent = introContentColl.filter(item => {
@@ -39,15 +43,25 @@ const introContent = introContentColl.filter(item => {
 //console.log(introContent);
 
 const { Content: Intro } = await render(introContent);
+const { Content: Verein } = await render(vereinContent);
+const { Content: Spenden } = await render(spendenContent);
 
 ---
 
 <BaseLayout>
   <TopArea />
   <WelcomeBanner />
-  <div class="h-24"></div>
-  <FrontSection collection="news" sortBy="date_published" howMany="4" component="ArticlesNude" showDate="true" sectionTitle="true">
+  <div class="h-6"></div>
+  <FrontSection collection="now" sortBy="date_published" howMany="4" component="ArticlesNude2C" showDate="false" sectionTitle="true">
   </FrontSection>
+  <div class="h-12"></div>
+  <div class="mx-spaceFromEdge">
+    <Verein />
+  </div>
+  <div class="h-12"></div>
+  <div class="mx-spaceFromEdge">
+    <Spenden />
+  </div>
   <div class="h-24"></div>
     <!--fljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfsfljsalkfjsdaflsadjfs fasd fasdf asdfsadfasd fasdf adsf dsf df asdf asdf asdfsadfs
   <ThinLine />-->

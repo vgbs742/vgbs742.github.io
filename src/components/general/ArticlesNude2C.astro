@@ -33,7 +33,7 @@ function calculateAosDuration(xyz: number) {
     <div>
       <slot />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-secondary gap-6 pt-2 mt-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 text-secondary gap-6 pt-2 mt-2">
       {
         items.map((item, index) => (
          <div class="h-full flex flex-col">
@@ -41,7 +41,7 @@ function calculateAosDuration(xyz: number) {
               {item.data.headline}
             </h3>
             {((item.data.date_published || item.data.author) && showDate == true) && <div class="text-sm mt-0.5 font-light italic"><span>{formatDate(item.data.date_published)}</span>  <span>{/*item.author*/}</span></div>} 
-            <p class="text-sm leading-relaxed mt-1 grow">
+            <p class="text-sm leading-relaxed mt-1 grow text-justify">
               {item.data.excerpt}
             </p>
             <div class="mt-2">

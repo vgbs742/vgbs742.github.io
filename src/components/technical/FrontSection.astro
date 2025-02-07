@@ -5,6 +5,7 @@ import TopArea from "@components/general/TopArea.astro";
 import Intro from "@components/general/Intro.astro";
 import Numbered from "@components/general/Numbered.astro";
 import ArticlesNude from "@components/general/ArticlesNude.astro";
+import ArticlesNude2C from "@components/general/ArticlesNude2C.astro";
 import ArticlesImaged from "@components/general/ArticlesImaged.astro";
 
 //collections
@@ -57,4 +58,5 @@ const sectionData = getOneLang(sectionDataRaw, lang)[0];
 
 { component == "ArticlesImaged" && <ArticlesImaged items={items} collection={collection} sectionData={sectionData} showDate={showDate} sectionTitle={sectionTitle} bothThin={bothThin}><slot /></ArticlesImaged> }
 { component == "ArticlesNude" && <ArticlesNude items={items} collection={collection} sectionData={sectionData} showDate={showDate} sectionTitle={sectionTitle} bothThin={bothThin}><slot /></ArticlesNude> }
+{ component == "ArticlesNude2C" && <ArticlesNude2C items={items} collection={collection} sectionData={sectionData} showDate={showDate} sectionTitle={sectionTitle} bothThin={bothThin}><slot /></ArticlesNude2C> }
 { component == "Numbered" && <Numbered items={items} collection={collection} sectionData={sectionData} showDate={showDate} sectionTitle={sectionTitle} bothThin={bothThin}><slot /></Numbered> }
