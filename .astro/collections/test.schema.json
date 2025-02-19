@@ -10,10 +10,10 @@
         "is_draft": {
           "type": "boolean"
         },
-        "not_on_front": {
+        "on_front": {
           "type": "boolean"
         },
-        "not_on_section": {
+        "on_section": {
           "type": "boolean"
         },
         "no_own_page": {

@@ -1,13 +1,15 @@
 ---
 import Page from '@components/pages_complete/now/slug.astro'
 import { getCollection, render } from 'astro:content';
-import { getTranslations, getOneLang } from '@snippets/handleCollections';
+import { getTranslations, getOneLang } from '@/snippets/handleCollections';
+
+const lang = 'de';
 
 export async function getStaticPaths() {
   const pages = await getCollection('now');
 
-  ////////////////////console.log("pages");
-  ////////////////////console.log(pages);
+  //////////////////////console.log("pages");
+  //////////////////////console.log(pages);
 
   const pagesThisLang = getOneLang(pages, 'de');
   const pagesNoDrafts =  pagesThisLang.filter(page => {
@@ -23,16 +25,18 @@ export async function getStaticPaths() {
 
   return paths;
 }
-////////console.log("Astro.params");
-////////console.log(Astro.params);
+//////////console.log("Astro.params");
+//////////console.log(Astro.params);
 const { slug } = Astro.params;
 const { page, pages } = Astro.props;
-const splitSlug = page.filePath.split('/');
-////////console.log("splitSlug");
-////////console.log(splitSlug[splitSlug.length - 2]);
-const lang = splitSlug[splitSlug.length - 2]
-////////console.log("lang: "+lang);
-////////console.log("slug: "+slug);
+if(page){
+  const splitSlug = page.filePath.split('/');
+  //////////console.log("splitSlug");
+  //////////console.log(splitSlug[splitSlug.length - 2]);
+  const lang = splitSlug[splitSlug.length - 2]
+  //////////console.log("lang: "+lang);
+  //////////console.log("slug: "+slug);
+}
 
 
 ---

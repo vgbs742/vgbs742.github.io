@@ -165,6 +165,14 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
+"general": Record<string, {
+  id: string;
+  body?: string;
+  collection: "general";
+  data: InferEntrySchema<"general">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
 "keyWords": Record<string, {
   id: string;
   body?: string;
@@ -234,5 +242,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content.config.js");
+	export type ContentConfig = typeof import("./../src/content.config.js");
 }

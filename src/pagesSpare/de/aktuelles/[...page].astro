@@ -20,7 +20,7 @@ const slug = getSlugNoLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 //snippets
-import { sortBigFirst } from '@snippets/numberGames';
+import { sortBigFirst } from '@/snippets/numberGames';
 
 export async function getStaticPaths({ paginate }) {
 	const sortBy = 'date_published';
@@ -38,8 +38,8 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 
-////////////console.log("page");
-////////////console.log(page.data);
+//////////////console.log("page");
+//////////////console.log(page.data);
 
 const collection = 'now';
 
@@ -56,7 +56,7 @@ const keywords = sectionData.data.keywords;
 
 ---
 
-<BaseLayout /*keywords={keywords} title={sectionData.data.title} excerpt={sectionData.data.excerpt}>
+<BaseLayout keywords={keywords} title={sectionData.data.title} excerpt={sectionData.data.excerpt}>
 	<TopArea />
 	<Intro />
 

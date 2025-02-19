@@ -7,10 +7,10 @@
         "is_draft": {
           "type": "boolean"
         },
-        "not_on_front": {
+        "on_front": {
           "type": "boolean"
         },
-        "no_own_page": {
+        "own_page": {
           "type": "boolean"
         },
         "menu_order": {

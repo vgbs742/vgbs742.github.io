@@ -1,17 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Hero from "@components/landing/Hero.astro";
-import Projects from "@components/landing/Projects.astro";
-import Testimonials from "@components/landing/Testimonials.astro";
-import Articles from "@components/landing/Articles.astro";
-import FeaturedWork from "@components/landing/FeaturedWork.astro";
 import TopArea from "@components/general/TopArea.astro";
 import FrontSection from "@components/technical/FrontSection.astro";
 import ThinLine from "@/components/snippets/ThinLine.astro";
 import ThickLine from "@/components/snippets/ThickLine.astro";
 import WelcomeBanner from "@/components/banners/WelcomeBanner.astro";
 
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 import { getCollection, getEntry, render } from 'astro:content';
@@ -32,15 +27,15 @@ const spendenContent = await getEntry('bigBits', entrySpenden);
 
 const introContent = introContentColl.filter(item => {
     const returnThis = item.id == entry;
-    //console.log("entry: '"+entry+"'     item.id: '"+item.id+"'     returnThis: "+returnThis);
+    ////console.log("entry: '"+entry+"'     item.id: '"+item.id+"'     returnThis: "+returnThis);
     return returnThis;
   }
 );*/
 
-/*//console.log("introContentColl");
-//console.log(introContentColl);*/
-//console.log("introContent");
-//console.log(introContent);
+/*////console.log("introContentColl");
+////console.log(introContentColl);*/
+////console.log("introContent");
+////console.log(introContent);
 
 const { Content: Intro } = await render(introContent);
 const { Content: Verein } = await render(vereinContent);
@@ -48,18 +43,18 @@ const { Content: Spenden } = await render(spendenContent);
 
 ---
 
-<BaseLayout title="Verein Gürbetalbahn 742" excerpt="Der Verein Gürbetalbahn 742 hat zum Ziel den Erhalt des letzten vorhandenen ABDe 4/8 der BLS-Gruppe.">
+<BaseLayout title="Verein Gürbetalbahn 742" excerpt="Der Verein Gürbetalbahn 742 hat zum Ziel den Erhalt des letzten vorhandenen ABDe 4/8 der BLS-Gruppe."  lang={lang}>
   <TopArea />
   <WelcomeBanner />
   <div class="h-6"></div>
   <FrontSection collection="now" sortBy="date_published" howMany="4" component="ArticlesNude2C" showDate="false" sectionTitle="true">
   </FrontSection>
   <div class="h-6"></div>
-  <div class="mx-spaceFromEdge">
+  <div class="mx-auto px-spaceFromEdge 2xl:max-w-7xl">
     <Verein />
   </div>
   <div class="h-12"></div>
-  <div class="mx-spaceFromEdge">
+  <div class="mx-auto px-spaceFromEdge 2xl:max-w-7xl">
     <Spenden />
   </div>
   <div class="h-24"></div>
