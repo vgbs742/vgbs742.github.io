@@ -256,9 +256,6 @@
               }
             ]
           }
-        },
-        "$schema": {
-          "type": "string"
         }
       },
       "required": [
