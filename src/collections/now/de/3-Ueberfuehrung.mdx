@@ -4,18 +4,49 @@ is_draft: false
 title: "Überführung"
 slug: "ueberfuehrung"
 date_published: 2025-01-07
-date_updated: 
+date_updated: 2025-03-04
 is_og: false
 is_upToDate: true
 on_front: true
-make_page: false
+make_page: true 
 is_trans_ready: true
 headline: "Überführung Kallnach - Konolfingen"
-excerpt: "Der Triebwagen wird am 28.02.2025 durch die OeBB nach Konolfingen überführt. Wer diese Aktion in finanzieller Hinsicht unterstützen mag, findet unten die notwendigen Angaben."
+excerpt: "Der Triebwagen wurde am 28.02.2025 durch die OeBB nach Konolfingen überführt."
 author:
 - platz-halter
 
+capAlt:
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
 
 ---
 
+import Slider from "@components/content/Slider.astro" 
 
+import AAimg from "@assets/for_content/img/ueberfuhr20250228/Noah/3/20250228_VGBS_Uberfuhr_3.jpg"
+import AAdata from "@assets/for_content/img/ueberfuhr20250228/Noah/3/20250228_VGBS_Uberfuhr_3.json"
+import ABimg from "@assets/for_content/img/ueberfuhr20250228/Noah/4/20250228_VGBS_Uberfuhr_4.jpg"
+import ABdata from "@assets/for_content/img/ueberfuhr20250228/Noah/4/20250228_VGBS_Uberfuhr_4.json"
+import ACimg from "@assets/for_content/img/ueberfuhr20250228/Noah/6/20250228_VGBS_Uberfuhr_6.jpg"
+import ACdata from "@assets/for_content/img/ueberfuhr20250228/Noah/6/20250228_VGBS_Uberfuhr_6.json"
+import ADimg from "@assets/for_content/img/ueberfuhr20250228/Noah/11/20250228_VGBS_Uberfuhr_11.jpg"
+import ADdata from "@assets/for_content/img/ueberfuhr20250228/Noah/11/20250228_VGBS_Uberfuhr_11.json"
+import AEimg from "@assets/for_content/img/ueberfuhr20250228/Noah/12/20250228_VGBS_Uberfuhr_12.jpg"
+import AEdata from "@assets/for_content/img/ueberfuhr20250228/Noah/12/20250228_VGBS_Uberfuhr_12.json"
+import AFimg from "@assets/for_content/img/ueberfuhr20250228/Noah/14/20250228_VGBS_Uberfuhr_14.jpg"
+import AFdata from "@assets/for_content/img/ueberfuhr20250228/Noah/14/20250228_VGBS_Uberfuhr_14.json"
+
+
+Der Triebwagen wurde am 28.02.2025 durch die OeBB von Kallnach nach Konolfingen überführt. Er ist wohlbehalten an seinem neuen Standort angekommen. Vielen Dank an die OeBB für den Einsatz!
+
+<Slider items={[AAimg, ABimg, ACimg, ADimg, AEimg, AFimg]} capAlt={frontmatter.capAlt} dataFile={[AAdata, ABdata, ACdata, ADdata, AEdata, AFdata]} aspect="3/2" />

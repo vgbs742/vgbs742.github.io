@@ -97,15 +97,15 @@ if(page.data.date_published){
   dateString += tArt.published[lang];
   dateString += " ";
   dateString += formatDate(page.data.date_published);
+  
   //dateString += page.data.date_published;
 }
 if(page.data.date_updated){
-  dateString += ", "
+  dateString += ", ";
   dateString += tArt.updated[lang];
   dateString += " ";
   dateString += formatDate(page.data.date_updated);
 }
-
 const keywords = page.data.keywords;
 
 //console.log("keywords");
@@ -134,7 +134,9 @@ const keywords = page.data.keywords;
         {page.data.lead}
       </div>
       <div class="max-w-3xl mx-auto">
-        {<TwoThings left={dateString} right={authorString}/>}
+        <div class="text-left">
+          {<TwoThings left={dateString} right={authorString}/>}
+        </div>
         {page.data.is_trans_ready && <Content />}
         {!page.data.is_trans_ready && 
           <h3>{noTranslation.data.excuse.title[lang]}</h3>
