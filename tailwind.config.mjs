@@ -62,9 +62,9 @@ export default {
 			addBase({
 			  'a': { background: theme('gradients.linksNorm'), textDecoration: 'underline', textDecorationStyle: 'dotted' },
 			  'a:hover': { transition: 'all ease-in-out, 0.5s', background: theme('gradients.linksHov'), textDecoration: 'underline', dropShadow: theme('dropShadow.xl') /*config('theme.colors.complementary.opposite.yellow')*/ },
-			  'h1': { fontSize: '2rem', fontFamily: theme('fontFamily.title'), marginTop: '0.5rem' },
-			  'h2': { fontSize: '1.75rem', fontFamily: theme('fontFamily.title'), marginTop: '0.5rem'  },
-			  'h3': { fontSize: '1.5rem', fontFamily: theme('fontFamily.title'), marginTop: '0.5rem'  },
+			  'h1': { fontSize: '2rem', fontFamily: theme('fontFamily.title'), marginTop: '0.5rem', textAlign: 'left' },
+			  'h2': { fontSize: '1.75rem', fontFamily: theme('fontFamily.title'), marginTop: '0.5rem', textAlign: 'left' },
+			  'h3': { fontSize: '1.5rem', fontFamily: theme('fontFamily.title'), marginTop: '0.5rem', textAlign: 'left' },
 			  'ul': { listStyleType: 'disc', listStylePosition: 'outside', marginLeft: '1rem' },
 			})
 		  })
