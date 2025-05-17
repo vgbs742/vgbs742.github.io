@@ -27,3 +27,12 @@ platz-halter:
   member: " "                           # yes no former guest
   since: " "                               # year of joining
 
+matt-emmen:
+  name_first: "Matthias"
+  name_last: "Emmenegger"
+  title: ""
+  role:
+    generic: " "                    # generic title, is automatically translated
+  member: " "                           # yes no former guest
+  since: " "                               # year of joining
+

@@ -1,0 +1,65 @@
+---
+id: "fahrzeug"
+is_draft: false
+title: "Das Fahrzeug"
+slug: "fahrzeug"
+date_published: 2025-05-17
+is_og: false
+is_upToDate: true
+on_front: true
+make_page: true 
+is_trans_ready: true
+headline: "Das Fahrzeug"
+excerpt: "Die Geschichte des Triebwagens kurz erläutert"
+author:
+- matt-emmen
+
+capAltAB:
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+
+capAltB:
+- caption: ""
+  alt: ""
+
+capAltC:
+- caption: ""
+  alt: ""
+- caption: ""
+  alt: ""
+
+
+---
+
+import Slider from "@components/content/Slider.astro" 
+
+import A1Img from "@/assets/for_content/img/dasFahrzeug/A1.jpg"
+import A2Img from "@/assets/for_content/img/dasFahrzeug/A2.jpg"
+import A3Img from "@/assets/for_content/img/dasFahrzeug/A3.jpg"
+import AData from "@/assets/for_content/img/dasFahrzeug/A.json"
+
+import ABImg from "@/assets/for_content/img/dasFahrzeug/B1.jpg"
+import BData from "@/assets/for_content/img/dasFahrzeug/B.json"
+
+import C1Img from "@/assets/for_content/img/dasFahrzeug/C1.jpg"
+import C1Data from "@/assets/for_content/img/dasFahrzeug/C1.json"
+
+import C2Img from "@/assets/for_content/img/dasFahrzeug/C2.jpg"
+import C2Data from "@/assets/for_content/img/dasFahrzeug/C2.json"
+
+
+Die drei Triebwagen BCFe 4/8 741-743 beschaffte die BLS-Betriebsgruppe 1945 und 1946. Im Gegensatz zu den vor dem Krieg gelieferten Triebwagen besassen sie Leichtmetall Wagenkasten mit gerundeten Fronten, was ihnen ein sehr gefälliges Aussehen verlieh. Sie waren als Alleinfahrer geplant, weshalb man keine Faltenbalge für einen sicheren Übergang zu Anhängewagen einbaute. Die Hersteller waren SIG für den mechanischen Teil und SAAS für die elektrische Ausrüstung. Die Triebwagen waren wie folgt den Bahnen zugeteilt: SEZ-741, GBS-742 und BN-743.
+
+<Slider items={[A1Img, A2Img, A3Img, ABImg]} capAlt={frontmatter.capAltAB} dataFile={[AData, AData, AData, BData]} aspect="16/9" />
+
+1991 nach Ablieferung der neuen NPZ stellte die BLS die drei Triebwagen ab. 1992 gelangten dann die Triebwagen 742 und 741 an die OeBB (Oensingen-Balsthal-Bahn) und 1995 der 743 an die RVT (Régional du Val-de-Travers). Die OeBB rangierte den Triebwagen 741 2005 aus und er wurde abgebrochen. Der Triebwagen 742 fuhr ein Jahr länger, wurde ausrangiert und gelangte ans Bahnmuseum Kerzers-Kallnach. Der Triebwagen 743 gelangte 1995 zur RVT und wurde dort um 2018 abgebrochen.
+
+<Slider items={[C1Img, C2Img]} capAlt={frontmatter.capAltC} dataFile={[C1Data, C2Data]} aspect="[9/4]" />
+
+Der Triebwagen 742 ist somit der einzige, welcher bis heute erhalten blieb.
